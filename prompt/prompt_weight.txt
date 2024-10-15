@@ -1,0 +1,26 @@
+Analyze the student's problem-solving history and predict their performance on the next question.
+Student's problem-solving history:
+- Question ID sequence: {question_ids}
+- KC ID sequence: {kc_ids} (Note: This is a list of KC IDs associated with the next question. For example, if next_kc_id is [3, 72], it means the next question involves KC IDs 3 and 72.)
+- Selected option sequence: {option_sequence}
+- Selected option weights: {option_weights}
+- Correctness sequence: {answer_sequence}
+
+Next question details:
+- Next question ID: {next_question_id}
+ - Next question's KC ID: {next_kc_id} 
+
+Based on the above information, predict whether the student will answer the next question (ID: {next_question_id}, KC ID: {next_kc_id}) correctly ('correct') or incorrectly ('wrong').
+
+Consider the following when making your prediction:
+- The student's overall correctness pattern.
+- The complexity and difficulty levels of the questions and KC IDs.
+- How the selected options reflect their weight on the student's understanding and confidence.
+- Recent trends in the student's performance.
+- The student's progression and knowledge improvement over time.
+- The student's current knowledge state for each KC and how it matches the KC IDs in the next question.
+- Ignore any NaN values in the option weights.
+
+Output only the single word ['correct' or 'wrong']. No other words or punctuation should be included.
+
+
